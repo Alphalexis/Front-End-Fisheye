@@ -1,4 +1,5 @@
 function photographerFactory(data) {
+    
     const { name, portrait } = data;
 
     const picture = `assets/photographers/${portrait}`;
@@ -30,4 +31,16 @@ function photographerFactory(data) {
 
     }
     return { name, picture, getUserCardDOM }
+}
+
+
+class PhotoFactory {
+    constructor(data, type) {
+
+        if (type === 'article') {
+            return new photographerFactory(data)
+        } else {
+            throw 'Unknown photographer'
+        }
+    }
 }
