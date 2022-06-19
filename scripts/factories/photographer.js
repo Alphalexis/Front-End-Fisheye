@@ -19,18 +19,25 @@ function photographerFactory(data) {
       img.src = picture;
         const h2 = document.createElement( 'h2' );
         
-        article.appendChild(img);
-        article.appendChild(h2);
+
 
         const id = document.createElement( 'id' );
-        const city = document.createElement( 'city' );
+       
         h2.textContent = name;
-        const country = document.createElement( 'country' );
+        const location = document.createElement( 'p' );
+        location.textContent = city + ', ' + country;
+        location.className = 'location';
         const tagline = document.createElement( 'tagline' );
         const price = document.createElement( 'price' );
+
+        article.appendChild(img);
+        article.appendChild(h2);
+        article.appendChild(location);
+
+
         return (article);
     }
-    return { name, picture, getUserCardDOM }
+    return { name, picture, location, getUserCardDOM }
 }
 /*
 function setAttributes(el, attrs) {
