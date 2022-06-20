@@ -15,7 +15,7 @@ function photographerFactory(data) {
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
         const img = document.createElement( 'img' );
-      //  setAttribute(img, {src:picture, "aria-label":name})
+       // setAttribute(img, {src:picture, "account":name})
       img.src = picture;
         const h2 = document.createElement( 'h2' );
         
