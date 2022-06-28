@@ -1,8 +1,10 @@
 function photographerFactory(data) {
     
-    const { name, portrait, city, country, price, tagline } = data;
+    const { id, name, portrait, city, country, price, tagline } = data;
 
-    const picture = `assets/photographers/${portrait}`;
+    console.log(JSON.parse(JSON.stringify(data)));
+
+    const picture = `assets/sample/Photographers ID Photos/${portrait}`;
 
     /*		"name": "Mimi Keel",
 			"id": 243,
@@ -12,8 +14,17 @@ function photographerFactory(data) {
 			"price": 400,
 			"portrait": "MimiKeel.jpg"*/
 
+    function openPhotographer(){
+        window.open('photographer.html?id=' + id);
+    }
+
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
+        article.id = id;
+
+      //  const link = article.createElement('a');
+        //link.href = 'photographer.html';
+
         const img = document.createElement( 'img' );
        // setAttribute(img, {src:picture, "account":name})
       img.src = picture;
@@ -45,6 +56,11 @@ function photographerFactory(data) {
         article.appendChild(quote);
         article.appendChild(prix);
         article.appendChild(identity);
+//        article.appendChild(id);
+
+
+
+        article.addEventListener('click', openPhotographer);
 
         return (article);
     }
@@ -57,6 +73,8 @@ function setAttributes(el, attrs) {
     }
   }
 */  
+
+
 
 class PhotoFactory {
     constructor(data, type) {
