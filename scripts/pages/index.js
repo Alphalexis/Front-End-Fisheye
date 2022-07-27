@@ -1,14 +1,10 @@
-//Mettre le code JavaScript lié à la page photographer.html
+
 async function getPhotographers() {
     fetch("../../data/photographers.json", { mode: "no-cors" })
         .then((response) => response.json())
-        .then((data) => displayData(data.media));
+        .then((data) => displayData(data.photographers));
 }
 
-
-// et bien retourner le tableau photographers seulement une fois
-/*   return ({
-       photographers: [...photographers, ...photographers, ...photographers]});*/
 
 
 async function displayData(photographers) {
