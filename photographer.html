@@ -19,26 +19,55 @@
     <div class="photograph-header">
       <button aria-label="Contacter" class="contact_button" onclick="displayModal()">Contactez-moi</button>
     </div>
+
+    <div class="mediaSection"></div>
+
   </main>
   <div id="contact_modal">
-    <div class="modal">
+    <div class="contact_modal">
       <header>
+
         <h2>Contactez-moi</h2>
         <img alt="Fermer" src="assets/icons/close.svg" onclick="closeModal()" />
+        <h2 class="name_modal"></h2>
       </header>
       <form>
         <div>
           <label>Prénom</label>
+          <input>
+          <label>Nom</label>
+          <input>
+          <label>Email</label>
+          <input>
+          <label>Votre message</label>
+          <input>
           <!--<input /> -->
         </div>
-        <button aria-label="Envoyer" class="contact_button">Envoyer</button>
+        <button aria-label="Envoyer" class="send_button">Envoyer</button>
       </form>
     </div>
   </div>
+
+  <div id="lightbox_modal">
+
+    
+      <img class="fermer" alt="Fermer" src="assets/icons/close.png" onclick="closeLightboxModal()" />
+      <img class="previous_image" alt="Previous image" src="assets/icons/leftarrow.png" role="button" onkeypress="" onclick="switchSlide(-1)" />
+      <div class="lightboxcontent">
+        
+      </div>
+      <img class="next_image" alt="Next image" src="assets/icons/rightarrow.png" role="button"  onclick="switchSlide(+1)"/>
+    
+
+  </div>
+
   <script src="/scripts/utils/contactForm.js"></script>
+  <script src="scripts/utils/lightbox.js"></script>
+  <script src="scripts/factories/media.js"></script>
   <script src="scripts/factories/photographer.js"></script>
   <script src="scripts/pages/photographer.js"></script>
-  <script src="scripts/factories/media.js"></script>
+
+
 </body>
 
 </html>

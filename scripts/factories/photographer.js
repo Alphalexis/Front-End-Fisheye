@@ -13,6 +13,7 @@ function photographerFactory(data) {
 
 
     function getUserCardDOM() {
+
         const article = document.createElement('article');
         article.id = id;
 
@@ -48,12 +49,12 @@ function photographerFactory(data) {
         article.appendChild(identity);
 
 
-
-
         article.addEventListener('click', openPhotographer);
+
 
         return (article);
     }
+
 
     function getUserBannerInfoDOM() {
         const picture = `assets/sample/Photographers ID Photos/${portrait}`;
@@ -64,14 +65,17 @@ function photographerFactory(data) {
         const h1 = document.createElement('h1');
         const p = document.createElement('h3');
 
-        
+        const send = document.querySelector(".send_button");
         const contact = document.querySelector(".contact_button");
+        const modal = document.querySelector(".name_modal");
         const order = document.querySelector(".photograph-header");
         const main = document.getElementById("main");
         ul.className = 'ul_style'
         h1.textContent = name;
         p.textContent = city + ', ' + country;
         p.className = 'location';
+
+        modal.textContent = name;
 
         const quote = document.createElement('p');
         quote.textContent = tagline;
@@ -82,8 +86,16 @@ function photographerFactory(data) {
         img.className = 'photo';
 
         const text = document.createElement('p');
+        const likeTotal = document.createElement('p');
+        const likeTotalHeart = document.createElement('img');
         text.textContent = price + '€/jour';
         text.className = 'modal';
+        likeTotal.textContent = '' ;
+        likeTotal.className = 'Like_Total';
+        likeTotalHeart.src = 'assets/icons/heartmodal.png';
+        likeTotalHeart.className = 'Like_Total_Heart';
+
+
 
         const input = document.createElement('label');
         input.textContent = 'Trier par';
@@ -114,6 +126,7 @@ function photographerFactory(data) {
         align-items: center;*/
 
 
+
         liname.appendChild(h1);
         liname.appendChild(p);
         liname.appendChild(quote);
@@ -124,16 +137,25 @@ function photographerFactory(data) {
         ul.appendChild(liname);
         ul.appendChild(liname2);
         order.appendChild(ul);
+        text.appendChild(likeTotalHeart);
+        text.appendChild(likeTotal);
+
         order.appendChild(text);
+
         main.appendChild(input);
         select.appendChild(option1);
         select.appendChild(option2);
         select.appendChild(option3);
         input.appendChild(select);
+
         main.appendChild(order);
+
+        
+        send.addEventListener('click', openPhotographer);
 
         return (main);
     }
+
 
     return { name, picture, location, tagline, getUserCardDOM, getUserBannerInfoDOM }
 }

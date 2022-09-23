@@ -2,6 +2,21 @@
     display: none;
 }
 
+#lightbox_modal {
+    position: fixed;
+    z-index: -1;
+    right: 90px;
+    top: 50px;
+    width: 90%;
+    height: 90%;
+    display: none;
+    background-size: contain;
+    background: #312E2E;
+
+    margin: auto;
+    padding: 0;
+}
+
 #main {
     display: flex;
     flex-direction: column-reverse;
@@ -63,7 +78,22 @@ ul {
     cursor: pointer;
 }
 
+.send_button {
+    order: 1;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .Order_By {
+margin-left: 50px;
 font-size: 20px;
 font-weight: bold;
 color: white;
@@ -76,11 +106,30 @@ border-radius: 5px;
 cursor: pointer;
 }
 
-
 .modal {
     bottom: 0px;
     right: 50px;
-    position: absolute;
+    position: fixed;
+    border-radius: 5px;
+    background-color: #DB8876;
+    width: 15%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+    padding: 35px;
+    margin: auto;
+}
+
+.modal img {
+    height: 20px;
+    margin-right: 140px;
+}
+
+.contact_modal{
+    bottom: 10%;
+    right: 40%;
+    position: fixed;
     border-radius: 5px;
     background-color: #DB8876;
     width: 15%;
@@ -92,6 +141,15 @@ cursor: pointer;
     margin: auto;
 }
 
+.contact_modal h2{
+font-size: 30px;
+margin-top: 0px;
+}
+
+.contact_modal img{
+cursor: pointer;
+}
+
 .modal header {
     justify-content: space-between;
     width: 100%;
@@ -99,6 +157,45 @@ cursor: pointer;
 
 .modal header img {
     cursor: pointer;
+}
+
+.contact_modal header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.lightboxitem{
+    margin-left: 350px;
+
+}
+
+.lightboxitem figcaption{
+margin-left: -190px;
+margin-top: -75px;
+font-weight: bold;
+font-size: 20px;
+color: white;
+}
+
+.fermer{
+    position: fixed;
+    bottom: 765px;
+    right: 100px;
+}
+
+.previous_image {
+    position: fixed;
+    bottom: 400px;
+    left: 100px;
+}
+
+.next_image {
+    position: fixed;
+    bottom: 400px;
+    right: 100px;
 }
 
 li {
