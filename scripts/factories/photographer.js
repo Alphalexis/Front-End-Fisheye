@@ -10,6 +10,8 @@ function photographerFactory(data) {
         window.open('photographer.html?id=' + id);
     }
 
+    
+
 
 
     function getUserCardDOM() {
@@ -101,21 +103,7 @@ function photographerFactory(data) {
         input.textContent = 'Trier par';
         input.className = 'Trier';
 
-        const select = document.createElement('select');
-        select.className = 'Order_By';
-
-        const option1 = document.createElement('option');
-        option1.textContent = 'Popularité';
-        option1.className = 'Pop';
-
-        const option2 = document.createElement('option');
-        option2.textContent = 'Date';
-        option2.className = 'Date';
-
-        const option3 = document.createElement('option');
-        option3.textContent = 'Titre';
-        option3.className = 'Titre';
-
+        const triStyle = document.querySelector(".triStyle");
 
 
         ul.style.display = "flex";
@@ -142,16 +130,10 @@ function photographerFactory(data) {
 
         order.appendChild(text);
 
-        main.appendChild(input);
-        select.appendChild(option1);
-        select.appendChild(option2);
-        select.appendChild(option3);
-        input.appendChild(select);
-
+        triStyle.appendChild(input);
+        main.appendChild(triStyle)
         main.appendChild(order);
 
-        
-        send.addEventListener('click', openPhotographer);
 
         return (main);
     }

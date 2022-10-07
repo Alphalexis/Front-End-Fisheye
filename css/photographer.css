@@ -58,7 +58,6 @@ ul {
 
 .Trier {
     margin-left: 100px;
-    margin-top: 40px;
     font-size: 20px;
     font-weight: bold;
 }
@@ -78,6 +77,8 @@ ul {
     cursor: pointer;
 }
 
+
+
 .send_button {
     order: 1;
     font-size: 20px;
@@ -90,6 +91,15 @@ ul {
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.triStyle {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    margin-top: 20px;
 }
 
 .Order_By {
