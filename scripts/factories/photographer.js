@@ -99,10 +99,10 @@ function photographerFactory(data) {
 
 
 
-        const input = document.createElement('label');
+       /* const input = document.createElement('label');
         input.textContent = 'Trier par';
         input.className = 'Trier';
-
+*/
         const triStyle = document.querySelector(".triStyle");
 
 
@@ -130,7 +130,7 @@ function photographerFactory(data) {
 
         order.appendChild(text);
 
-        triStyle.appendChild(input);
+       // triStyle.appendChild(input);
         main.appendChild(triStyle)
         main.appendChild(order);
 

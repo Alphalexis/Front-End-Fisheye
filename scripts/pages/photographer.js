@@ -21,34 +21,61 @@ async function getMediaById(photographerId) {
     return filtre;
 }
 
-async function getMediaByLikes(medias) {
+async function sortMedia(value){
+    
+    console.log("sortMedia",value);
+    let medias = [];
 
-    medias.sort(function(a,b){
+    if (value=="popularite") {
+        console.log("if like");
+        medias = await getMediaByLikes();
+       console.log("medias popularite", medias);
+      
+    }
+
+    if (value=="date") {
+        console.log("if date");
+        medias = await getMediaByDate();
+       console.log("medias date", medias);
+     
+    }
+
+    if (value=="titre") {
+        console.log("if titre");
+        medias = await getMediaByTitle();
+       console.log("medias titre", medias);
+     
+    }
+    displayMedia(medias);
+    displayLightboxMedia(medias);
+
+}
+
+async function getMediaByLikes() {
+    console.log("getMediaByLikes");
+    const medias = await getMediaById(id);
+   return medias.sort(function(a,b){
         return a.likes - b.likes;  
     })
-    console.log('medias by likes', medias);
-    return {medias, displayMedia};
 }
 
 
-async function getMediaByDate(medias) {
-
-    medias.sort(function(a, b) {
-        return a.date - b.date;  
+async function getMediaByDate() {
+    console.log("getMediaByDate");
+    const medias = await getMediaById(id);
+    return  medias.sort(function(a, b) {
+        return new Date(a.date) - new Date(b.date);  
     })
-    
-    console.log('medias by date', medias);
-    return {medias, displayMedia};
+
 }
 
-async function getMediaByTitle(medias) {
-
-    medias.sort(function(a,b){
-        return a.title - b.title;  
+async function getMediaByTitle() {
+    console.log("getMediaByTitle");
+    const medias = await getMediaById(id);
+    return medias.sort(function(a,b){
+        return a.title.toLowerCase().localeCompare(b.title.toLowerCase());  
     })
     
-    console.log('medias by title', medias);
-    return {medias, displayMedia};
 }
 
 /*async function triMedia(medias){
@@ -192,8 +219,6 @@ async function init() {
     displayBanner(photographer);
     const media = await getMediaById(id);
     console.log(media);
-    getMediaByLikes(media);
-    getMediaByDate(media);
     getMediaByTitle(media);
     await displayMedia(media);
     getMediaLike();
