@@ -1,7 +1,6 @@
 const params = (new URL(document.location)).searchParams;
 const id = params.get('id');
 const photographerId = params.get('photographerId');
-//const photographerId = params.get('photographerId');
 
 async function getPhotographerById(id) {
     const data = await fetch("../../data/photographers.json", { mode: "no-cors" })
@@ -78,17 +77,6 @@ async function getMediaByTitle() {
     
 }
 
-/*async function triMedia(medias){
-    console.log("tri media");
-    const popularite = document.querySelector(".Pop");
-    console.log("popularite", popularite);
-    popularite.addEventListener('click', function(){
-        console.log("click on popularite");
-       const a = getMediaByLikes(medias);
-       console.log("media tri", a);
-    }) ;
-
-}*/
 
 async function displayBanner(photographer) {
     const photographerHeader = document.querySelector(".photograph-header");
@@ -115,7 +103,6 @@ async function displayMedia(medias) {
         output += mediaCardDOM;
         index++;
         console.log('mediaCardDOM', mediaCardDOM);
-        // mediaCardDOM.addEventListener('click', openLightboxModal(media));
 
     });
     mediaDisplay.innerHTML = output;
@@ -173,10 +160,6 @@ function getMediaLike() {
 
         })
         likeTotal.innerHTML = Number(likeTotal.innerHTML) + Number(likeNumber.innerHTML);
-        /*for(const counter of likeNb ) {
-           likeTotal.innerHTML = Number(likeTotal.innerHTML) + Number(likeNumber.innerHTML);
-           
-   };*/
 
         console.log('likeTotal', likeTotal);
     });
@@ -223,7 +206,6 @@ async function init() {
     await displayMedia(media);
     getMediaLike();
     await displayLightboxMedia(media);
-   // triMedia(media);
     handleKeyup();
 };
 

@@ -99,19 +99,15 @@ function photographerFactory(data) {
 
 
 
-       /* const input = document.createElement('label');
-        input.textContent = 'Trier par';
-        input.className = 'Trier';
-*/
+
         const triStyle = document.querySelector(".triStyle");
 
 
         ul.style.display = "flex";
-        //align-items: center
+
 
         order.style.display = "flex";
-        /*justify-content: space-around;
-        align-items: center;*/
+
 
 
 
@@ -130,7 +126,7 @@ function photographerFactory(data) {
 
         order.appendChild(text);
 
-       // triStyle.appendChild(input);
+
         main.appendChild(triStyle)
         main.appendChild(order);
 
