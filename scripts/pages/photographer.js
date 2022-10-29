@@ -22,7 +22,7 @@ async function getMediaById(photographerId) {
 }
 
 async function sortMedia(value) {
-// menu de selction 
+// menu de selection (switch)
     let medias = [];
     if (value == "popularite") {
         medias = await getMediaByLikes();
