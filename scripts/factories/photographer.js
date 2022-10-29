@@ -13,7 +13,7 @@ function photographerFactory(data) {
     
 
 
-
+//affichage des differents elements dans l'index
     function getUserCardDOM() {
 
         const a = document.createElement('a');
@@ -57,13 +57,11 @@ function photographerFactory(data) {
 
         a.appendChild(article);
 
-      //  article.addEventListener('click', openPhotographer);
-
 
         return (a);
     }
 
-
+//affichage des differents elements dans les pages de photographes
     function getUserBannerInfoDOM() {
         const picture = `assets/sample/Photographers ID Photos/${portrait}`;
         const ul = document.createElement('ul');
@@ -113,6 +111,9 @@ function photographerFactory(data) {
 
 
         order.style.display = "flex";
+
+
+
 
         send.addEventListener("click", function(event) {
             event.preventDefault();

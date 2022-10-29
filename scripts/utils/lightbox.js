@@ -1,6 +1,7 @@
+
 let slideIndex = 0;
 
-
+//fonctions ouvrir et fermer la modale lightbox
 function openLightboxModal() {
     const modal = document.getElementById("lightbox_modal");
     modal.focus();
@@ -16,9 +17,9 @@ function closeLightboxModal() {
 
 }
 
-
+//affiche la bonne slide (media dans la lightbox)
 function currentSlide(indexSelected) {
-    console.log("currentSlide", indexSelected);
+
     const slides = document.querySelectorAll(".lightboxitem");
     for (let index = 0; index < slides.length; index++) {
         const element = slides[index];
@@ -32,11 +33,11 @@ function currentSlide(indexSelected) {
     slideIndex = indexSelected;
 }
 
+//rotation dans le bon ordre de la liste des medias
 function switchSlide(i){
 slides = document.querySelectorAll(".lightboxitem");
 const lengthSlide = slides.length;
-console.log("slides.length",slides.length)
-console.log("slideIndex before",slideIndex)
+
     if (slideIndex==0 && i==-1) {
         slideIndex = lengthSlide - 1;
     }
@@ -46,14 +47,14 @@ console.log("slideIndex before",slideIndex)
     else {
         slideIndex = slideIndex + i;
     }
-console.log("slideIndex after",slideIndex)
+
 currentSlide(slideIndex);
 }
 
 const mediaSection = document.querySelector("#lightbox_modal")
-console.log("mediaSection", mediaSection);
+
 mediaSection.addEventListener("keyup", function(e){
-    console.log("e", e);
+
     const keyCode = e.keyCode
     if (keyCode === 39) {
         switchSlide(1)
@@ -61,7 +62,7 @@ mediaSection.addEventListener("keyup", function(e){
         switchSlide(-1)
     }
 
-    console.log("keyCode", keyCode)
+
 })
 
 

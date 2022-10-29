@@ -5,7 +5,7 @@ async function getPhotographers() {
         .then((data) => displayData(data.photographers));
 }
 
-
+//récupere et affiche le contenu du .json
 
 async function displayData(photographers) {
     const photographersSection = document.querySelector(".photographer_section");
@@ -15,13 +15,13 @@ async function displayData(photographers) {
             const userCardDOM = photographerModel.getUserCardDOM();
             photographersSection.appendChild(userCardDOM);
         });
-};
+}
 
 async function init() {
     // Récupère les datas des photographes
     await getPhotographers();
     //   displayData(photographers);
-};
+}
 
 init();
 

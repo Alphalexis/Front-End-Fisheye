@@ -3,6 +3,7 @@ module.exports = {
         "browser": true,
         "es2021": true
     },
+    "root" : true,
     "extends": "eslint:recommended",
     "overrides": [
     ],
@@ -10,6 +11,8 @@ module.exports = {
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
+    
     "rules": {
+        "no-unused-vars": "off"
     }
 }

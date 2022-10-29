@@ -1,3 +1,4 @@
+//choisis le type approprié de media entre image et vidéo. Sinon affiche "media non définie"
 function mediaFactory(data, mediaType) {
     if (mediaType == 'image') {
 
@@ -12,10 +13,10 @@ function mediaFactory(data, mediaType) {
 }
 
 
-
+//affichage image
 function imageMedia(data) {
     console.log("imageMedia");
-    const { id, photographerId, title, image, likes, date, price } = data;
+    const { id, photographerId, title, image, likes } = data;
     const mediaPath = `assets/sample/${photographerId}/${image}`;
     function getMediaCardDOM(index) {
         const content = `
@@ -42,6 +43,7 @@ function imageMedia(data) {
         return content;
     }
 
+    //affichage image en lightbox
     function getLightboxCardDOM(){
         const content = `
         <figure class=lightboxitem ">
@@ -64,9 +66,10 @@ function imageMedia(data) {
     return { title, likes, mediaPath, photographerId, getMediaCardDOM, getLightboxCardDOM };
 }
 
+//affichage vidéo
 function videoMedia(data) {
     console.log("videoMedia");
-    const { id, photographerId, title, video, likes, date, price } = data;
+    const { id, photographerId, title, video, likes } = data;
     const mediaPath = `assets/sample/${photographerId}/${video}`;
 
     function getMediaCardDOM(index) {
@@ -95,6 +98,7 @@ function videoMedia(data) {
 		return content;
 	}
 
+//affichage vidéo en lightbox
     function getLightboxCardDOM(){
         const content = `
       <video  controls preload="metadata"  class=lightboxitem width=1000 height=857 >
@@ -115,23 +119,6 @@ function videoMedia(data) {
 
 return { title, likes, mediaPath, photographerId, getMediaCardDOM, getLightboxCardDOM };
 
-}
-
-function sortByPopularity(indexSelected){
-    console.log("currentSlide", indexSelected);
-    const likesNb = document.querySelectorAll(".likes");
-    for (let index = 0; index < likesNb.length; index++) {
-        const element = likesNb[index];
-        element.style.display = "none";
-
-    }
-    if (typeof likesNb[indexSelected] != "undefined") {
-        likesNb[indexSelected].style.display = "block";
-    }
-    likesNb.sort();
-    console.log("Sort test", likesNb);
-
-    return { likes};
 }
 
 
