@@ -73,11 +73,14 @@ function videoMedia(data) {
 		const content = `
             <div class="video tabindex" data-index="${index}" tabindex="0">
                 <div class="video-container">
-                    <video class="videos" controls preload="metadata" style="width: 350px; height: 300px" onclick="openLightboxModal();currentSlide(${index})"  aria-label="image closeup view">
+                    <video class="videos"  style="width: 350px; height: 300px; object-fit: cover; margin-block-start: 1em;
+                    margin-block-end: 1em;
+                    margin-inline-start: 40px;
+                    margin-inline-end: 40px;" onclick="openLightboxModal();currentSlide(${index})"  aria-label="image closeup view">
                         <source src="${mediaPath}#t=0.1" type="video/mp4" style="width: 350px; height: 300px">
                     </video>
                 </div>
-                <div class="infos">
+                <div class="infos" style="margin-left: 40px; margin-top: -15px;">
                     <span>${title}</span>
                     <div>
                         <span class="likes" data-media-id="${id}">${likes} </span>

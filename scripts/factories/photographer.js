@@ -16,11 +16,16 @@ function photographerFactory(data) {
 
     function getUserCardDOM() {
 
+        const a = document.createElement('a');
+        a.href = 'photographer.html?id=' + id;
+        a.focusable = true;
+
         const article = document.createElement('article');
         article.id = id;
 
         const img = document.createElement('img');
         img.src = picture;
+        img.alt = name;
         const h2 = document.createElement('h2');
 
 
@@ -50,11 +55,12 @@ function photographerFactory(data) {
         article.appendChild(prix);
         article.appendChild(identity);
 
+        a.appendChild(article);
 
-        article.addEventListener('click', openPhotographer);
+      //  article.addEventListener('click', openPhotographer);
 
 
-        return (article);
+        return (a);
     }
 
 
@@ -108,7 +114,9 @@ function photographerFactory(data) {
 
         order.style.display = "flex";
 
-
+        send.addEventListener("click", function(event) {
+            event.preventDefault();
+          }, false);
 
 
         liname.appendChild(h1);

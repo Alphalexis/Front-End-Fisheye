@@ -1,3 +1,4 @@
+
 const params = (new URL(document.location)).searchParams;
 const id = params.get('id');
 const photographerId = params.get('photographerId');
@@ -54,7 +55,7 @@ async function getMediaByLikes() {
     console.log("getMediaByLikes");
     const medias = await getMediaById(id);
    return medias.sort(function(a,b){
-        return a.likes - b.likes;  
+        return b.likes - a.likes;  
     })
 }
 

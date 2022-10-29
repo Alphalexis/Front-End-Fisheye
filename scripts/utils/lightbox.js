@@ -51,7 +51,7 @@ currentSlide(slideIndex);
 }
 
 const mediaSection = document.querySelector("#lightbox_modal")
-console("mediaSection", mediaSection);
+console.log("mediaSection", mediaSection);
 mediaSection.addEventListener("keyup", function(e){
     console.log("e", e);
     const keyCode = e.keyCode
@@ -65,120 +65,4 @@ mediaSection.addEventListener("keyup", function(e){
 })
 
 
-/*$(document).keydown(function(e) {
-    const keyCode = e.keyCode ? e.keyCode : e.which
-  
-    if (keyCode === 39) {
-        switchSlide(1)
-    } else if (keyCode === 37) {
-        switchSlide(-1)
-    }
- })*/
 
-/*
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".carousel-container").forEach((carousel) => {
-carousel.querySelector(".previous_image").addEventListener("click", (e) => {
-    minusItem(carousel);
-  });
-
-  carousel.querySelector(".next_image").addEventListener("click", () => {
-    plusItem(carousel);
-  });
-});
-
-  function plusItem(carousel) {
-    let item = currentItem(carousel);
-  
-    carousel
-      .querySelectorAll(".lightboxitem")
-      [item].nextElementSibling.classList.contains("item")
-      ? showItems(carousel, item + 1)
-      : showItems(carousel, 0);
-  };
-  
-  function minusItem(carousel) {
-    let item = currentItem(carousel);
-  
-    carousel.querySelectorAll(".lightboxitem")[item].previousElementSibling != null
-      ? showItems(carousel, item - 1)
-      : showItems(carousel, carousel.querySelectorAll(".lightboxitem").length - 1);
-  }
-
-})
-*/
-/*
-const $prevBtn = $('.previous_image')
-const $nextBtn = $('.next_image')
-const $carouselItems = $('.lightboxitem')
- 
-let currentItemPosition = currentSlide(indexSelected)
-let carouselInterval
- 
-const goToNextSlide = () => {
-   if (currentItemPosition + 1 >=  $carouselItems.length) {
-      
-       const lastItem = `.item-${currentItemPosition}`
- 
-       currentItemPosition = 0
-       const currentItem = `.item-${currentItemPosition}`
-      
-       setNodeAttributes(lastItem, currentItem)
-   } else {
-       currentItemPosition += 1
-       const lastItem = `.item-${currentItemPosition - 1}`
-       const currentItem = `.item-${currentItemPosition}`
-      
-       setNodeAttributes(lastItem, currentItem)
-   }
-}
- 
-const goToPreviousSlide = () => {
-   if (currentItemPosition - 1 >=  0) {
-       currentItemPosition -= 1
-       const currentItem = `.item-${currentItemPosition}`
-       const lastItem = `.item-${currentItemPosition + 1}`
- 
-       setNodeAttributes(lastItem, currentItem)
-   } else {
-       const lastItem = `.item-${currentItemPosition}`
-      
-       currentItemPosition = 2
-       const currentItem = `.item-${currentItemPosition}`
-      
-       setNodeAttributes(lastItem, currentItem)
-   }
-}
- 
- 
-const setNodeAttributes = (lastItem, currentItem) => {
-   $(lastItem).css('display', 'none')
-   $(currentItem).css('display', 'block')
-   $(lastItem).attr('aria-hidden', 'true')
-   $(currentItem).attr('aria-hidden', 'false')
-}
- 
-
-$prevBtn.click(function() {
-    console.log("goToPreviousSlide")
-    goToPreviousSlide()
-
- })
-
- $nextBtn.click(function() {
-    console.log("goToNextSlide")
-    goToNextSlide()
-
- })
-
-
-$(document).keydown(function(e) {
-    const keyCode = e.keyCode ? e.keyCode : e.which
-  
-    if (keyCode === 39) {
-        goToNextSlide()
-    } else if (keyCode === 37) {
-        goToPreviousSlide()
-    }
- })
-*/
