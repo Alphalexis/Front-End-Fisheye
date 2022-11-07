@@ -25,3 +25,16 @@ document.querySelector(".send_button").onclick = function(){
     message = document.getElementById("votreMessage").value;
     console.log(message);
 }
+
+
+
+    const modal = document.getElementById("contact_modal")
+console.log(modal,"modal");
+modal.addEventListener("keyup", function(e){
+    console.log(e ,"e keyup");
+    const keyCode = e.code
+    if (keyCode == 'Escape') {
+        closeModal();
+    }
+    })
+

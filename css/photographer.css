@@ -211,14 +211,14 @@ color: white;
     position: fixed;
     bottom: 400px;
     left: 100px;
-    height: 100px;
+    height: 80px;
 }
 
 .next_image {
     position: fixed;
     bottom: 400px;
     right: 100px;
-    height: 100px;
+    height: 80px;
 }
 
 li {
