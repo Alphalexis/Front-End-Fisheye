@@ -4,15 +4,25 @@ let slideIndex = 0;
 //fonctions ouvrir et fermer la modale lightbox
 function openLightboxModal() {
     const modal = document.getElementById("lightbox_modal");
-    modal.focus();
+    const body = document.querySelector("body");
+    const main = document.querySelector("main");
+    const close = document.querySelector(".fermer");
+    main.setAttribute("aria-hidden", true);
+    modal.setAttribute("aria-hidden",false);
+    body.style.overflow = "hidden";
     modal.style.display = "block";
-    modal.style.zIndex = 1;
+    main.style.display = "none";
+    close.focus();
 
 }
 
 function closeLightboxModal() {
     const modal = document.getElementById("lightbox_modal");
+    const main = document.querySelector("main");
     modal.style.display = "none";
+    const body = document.querySelector("body")
+    body.style.overflow = "visible";
+    main.style.display = "flex";
 
 }
 

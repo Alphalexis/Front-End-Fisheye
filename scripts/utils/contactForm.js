@@ -2,14 +2,22 @@
 
 function displayModal() {
     const modal = document.getElementById("contact_modal");
-	modal.style.display = "block";
+    const main = document.getElementById("main");
+	modal.style.display = "flex";
+
+    main.setAttribute("aria-hidden", true);
+    modal.setAttribute("aria-hidden",false);
     document.querySelector("#prenom").focus();
-    
+
 }
 
 function closeModal() {
     const modal = document.getElementById("contact_modal");
+    const main = document.getElementById("main");
     modal.style.display = "none";
+
+    main.setAttribute("aria-hidden", false);
+    modal.setAttribute("aria-hidden",true);
 }
 
 let surname;

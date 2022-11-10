@@ -37,6 +37,7 @@ async function sortMedia(value) {
     }
 
     displayMedia(medias);
+    getMediaLike();
     displayLightboxMedia(medias);
 
 }
