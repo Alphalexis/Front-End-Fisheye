@@ -5,13 +5,13 @@
 #lightbox_modal {
     position: fixed;
     z-index: -1;
-    right: 90px;
+    right: -90px;
     top: 50px;
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     display: none;
     background-size: contain;
-    background: #312E2E;
+    background: white;
 
     margin: auto;
     padding: 0;
@@ -193,11 +193,10 @@ cursor: pointer;
 }
 
 .lightboxitem figcaption{
-margin-left: -190px;
-margin-top: -75px;
+margin-top: 10px;
 font-weight: bold;
-font-size: 20px;
-color: white;
+font-size: 22px;
+color: #901C1C;
 }
 
 .fermer{

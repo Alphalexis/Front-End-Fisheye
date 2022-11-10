@@ -46,10 +46,10 @@ function imageMedia(data) {
     //affichage image en lightbox
     function getLightboxCardDOM(){
         const content = `
-        <figure class=lightboxitem ">
-        <img src="${mediaPath}" alt="${title}"width=1000 height=857 loading="lazy" style="
+        <figure class=lightboxitem  ">
+        <img src="${mediaPath}" alt="${title}"width=1000 height=817 loading="lazy" style="
         object-fit: cover;
-    ">
+    " >
         <figcaption>
             <span>
                 ${title}
@@ -101,7 +101,7 @@ function videoMedia(data) {
 //affichage vidéo en lightbox
     function getLightboxCardDOM(){
         const content = `
-      <video  controls preload="metadata"  class=lightboxitem width=1000 height=857 >
+      <video  controls preload="metadata"  class=lightboxitem width=1000 height=837 >
                     <source src="${mediaPath}#t=0.1" type="video/mp4" alt="${title}"  loading="lazy">
 
                     <figcaption>

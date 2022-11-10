@@ -8,7 +8,6 @@ function openLightboxModal() {
     modal.style.display = "block";
     modal.style.zIndex = 1;
 
-
 }
 
 function closeLightboxModal() {
@@ -51,6 +50,8 @@ const lengthSlide = slides.length;
 currentSlide(slideIndex);
 }
 
+
+
 const mediaSection = document.querySelector("#lightbox_modal")
 
 mediaSection.addEventListener("keyup", function(e){
@@ -65,5 +66,6 @@ mediaSection.addEventListener("keyup", function(e){
 
 })
 
+document.getElementById("lightbox_modal").focus({preventScroll:true});
 
 
