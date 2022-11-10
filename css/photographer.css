@@ -201,6 +201,14 @@ font-size: 22px;
 color: #901C1C;
 }
 
+/*.videotitle{
+    margin-top: 10px;
+    margin-left: 24%;
+    font-weight: bold;
+    font-size: 22px;
+    color: #901C1C;
+    }*/
+
 .fermer{
     position: fixed;
     bottom: 780px;

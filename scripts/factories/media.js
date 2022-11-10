@@ -101,9 +101,10 @@ function videoMedia(data) {
 //affichage vidéo en lightbox
     function getLightboxCardDOM(){
         const content = `
-      <video  controls preload="metadata"  class=lightboxitem width=1000 height=837 >
+        <figure class=lightboxitem>
+      <video  controls preload="metadata"   width=1000 height=837 >
                     <source src="${mediaPath}#t=0.1" type="video/mp4" alt="${title}"  loading="lazy">
-
+                    </video>
                     <figcaption>
                         <span>
                             ${title}
@@ -111,7 +112,7 @@ function videoMedia(data) {
 
                         </div>
                         </figcaption>
-                        </video>
+                        </figure>
                 
                 `;
         return content;
