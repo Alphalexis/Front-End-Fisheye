@@ -6,21 +6,20 @@ function openLightboxModal() {
     const modal = document.getElementById("lightbox_modal");
     const body = document.querySelector("body");
     const main = document.querySelector("main");
-    const close = document.querySelector(".fermer");
     main.setAttribute("aria-hidden", true);
     modal.setAttribute("aria-hidden",false);
     body.style.overflow = "hidden";
     modal.style.display = "block";
     main.style.display = "none";
-    close.focus();
+    modal.focus();
 
 }
 
 function closeLightboxModal() {
     const modal = document.getElementById("lightbox_modal");
     const main = document.querySelector("main");
-    modal.style.display = "none";
     const body = document.querySelector("body")
+    modal.style.display = "none";
     body.style.overflow = "visible";
     main.style.display = "flex";
 
@@ -69,8 +68,12 @@ mediaSection.addEventListener("keyup", function(e){
     const keyCode = e.keyCode
     if (keyCode === 39) {
         switchSlide(1)
-    } else if (keyCode === 37) {
+    }
+    if (keyCode === 37) {
         switchSlide(-1)
+    }
+    if (keyCode === 27) {
+        closeLightboxModal();
     }
 
 
