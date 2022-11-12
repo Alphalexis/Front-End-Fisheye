@@ -122,6 +122,19 @@ async function displayLightboxMedia(medias) {
     lightboxmodal.innerHTML = output;
 }
 
+function getLikeTotal() {
+    let likeNb = document.querySelectorAll('.likes');
+    let likeTotal = document.querySelector('.Like_Total');
+    const likePlus = document.querySelectorAll('.heart-icon');
+
+    likePlus.forEach((like, counter) => {
+
+        let likeNumber = likeNb[counter];
+        let clicked = [];
+        likeTotal.innerHTML = Number(likeTotal.innerHTML) + Number(likeNumber.innerHTML);
+    });
+}
+
 //Compteur de like + fonction pour ajouter des likes
 function getMediaLike() {
     let likeNb = document.querySelectorAll('.likes');
@@ -153,8 +166,7 @@ function getMediaLike() {
             }
 
         })
-        likeTotal.innerHTML = Number(likeTotal.innerHTML) + Number(likeNumber.innerHTML);
-
+        
         console.log('likeTotal', likeTotal);
     });
 
@@ -199,6 +211,7 @@ async function init() {
     console.log(media);
     getMediaByTitle(media);
     await displayMedia(media);
+    getLikeTotal()
     getMediaLike();
     await displayLightboxMedia(media);
     handleKeyup();

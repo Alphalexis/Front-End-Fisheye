@@ -79,6 +79,23 @@ mediaSection.addEventListener("keyup", function(e){
 
 })
 
+const left = document.querySelector(".previous_image")
+const right = document.querySelector(".next_image")
+
+left.addEventListener("keyup", function(e){
+    const keyCode = e.keyCode
+    if (keyCode === 13) {
+        switchSlide(-1)
+    }
+})
+
+right.addEventListener("keyup", function(e){
+    const keyCode = e.keyCode
+    if (keyCode === 13) {
+        switchSlide(1)
+    }
+})
+
 document.getElementById("lightbox_modal").focus({preventScroll:true});
 
 

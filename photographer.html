@@ -11,20 +11,20 @@
 
 <body>
   <header>
-    <a href="index.html">
+    <a href="index.html" tabindex="1">
       <img alt="Logo" src="assets/images/logo.png" class="logo" />
     </a>
   </header>
   <main id="main" aria-hidden="false">
     <div class="photograph-header">
-      <button aria-label="Contacter" class="contact_button" tabindex="0" onclick="displayModal()">Contactez-moi</button>
+      <button aria-label="Contacter" class="contact_button" tabindex="1" onclick="displayModal()">Contactez-moi</button>
     </div>
 
     <div class="mediaSection"></div>
 
-    <div class="triStyle">
+    <div class="triStyle" >
       <label id="labelTri" for="Order_By"> Trier par </label>
-      <select name="triSelect" id="Order_By" class="Order_By" onchange="sortMedia(value)">
+      <select name="triSelect" id="Order_By" class="Order_By" tabindex="1" onchange="sortMedia(value)">
         <option class="Date" value="date">Date</option>
         <option class="Pop" value="popularite">Popularité</option>
         <option class="Titre" value="titre">Titre</option>
